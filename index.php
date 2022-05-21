@@ -1,16 +1,54 @@
+<?php
+$page =(isset($_GET['load']) && $_GET['load'] !='') ? $_GET['load'] :'';
+?>
 <!DOCTYPE html>
-<html>
-  <head>
-    <title> My Home Page </title>
-  </head>
-  <body>
-  <h1> Welcome to My Website! I am Cherish Gohee! </h1>
-  <ul>
-    <li><a href="index.php" target="_blank"> HOME </a></li>
-    <li><a href="/LT2/Homepage.html" target= "_blank"> LEARNING TASK 2 </a> </li>
-    <li><a href="/LT3/index.html" target= "_blank"> LEARNING TASK 3 </a> </li>
-    <li><a href="/CLE1MT/index.html" target= "_blank"> CLE MIDTERM</a> </li>
-    <li><a href="/LT4/index.html" target= "_blank">LEARNING TASK 4</a> </li>
-    </ul>
-  </body>
+
+<html> 
+   <head>
+   <title> CLET</title>
+       <link rel="stylesheet" href="files/LT6.css">
+       <script src="files/cpg.js"> </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+       </head>
+   <body>
+        <header>
+       <div id="logobox">
+           <img alt="logo" src="files/logo.png">
+           <h1>CPG<span> -PORTFOLIO-</span></h1>
+            </div>
+            
+          <div id="nav">
+          <ul>
+            <li><a href="index.php?load=home">HOME</a></li>
+            <li><a href="index.php?load=profile">PROFILE</a></li>
+            <li><a href="index.php?load=projects">PROJECTS</a></li>
+          </ul>
+         </div>
+       </header>
+       
+       <div id="content">
+           <?php 
+            switch($page){
+                case 'home':
+                    include_once 'home.php';
+                    break;
+                case 'projects':
+                    include_once 'project.php';
+                    break;
+                case 'profile':
+                    include_once 'profile.php';
+                    break;
+                default:
+                    include_once 'home.php';
+            }
+        ?>
+        
+       
+       </div>
+        
+        </body>
 </html>
+  
