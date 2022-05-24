@@ -22,7 +22,6 @@ $page =(isset($_GET['load']) && $_GET['load'] !='') ? $_GET['load'] :'';
             
           <div id="nav">
           <ul>
-            <li><a href="index.php?load=home">HOME</a></li>
             <li><a href="index.php?load=profile">PROFILE</a></li>
             <li><a href="index.php?load=projects">PROJECTS</a></li>
           </ul>
@@ -32,9 +31,6 @@ $page =(isset($_GET['load']) && $_GET['load'] !='') ? $_GET['load'] :'';
        <div id="content">
            <?php 
             switch($page){
-                case 'home':
-                    include_once 'home.php';
-                    break;
                 case 'projects':
                     include_once 'project.php';
                     break;
